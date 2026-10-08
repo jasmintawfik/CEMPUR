@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<!-- Fortæller browseren, at dokumentet bruger HTML5 -->
+
+<html lang="da">
+
+<head>
+
+    <!-- Gør det muligt at bruge danske tegn som æ, ø og å -->
+    <meta charset="UTF-8">
+
+    <!-- Gør siden responsiv på mobil, tablet og computer -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Kobler CSS-filen til HTML-dokumentet -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Titlen der vises i browserens fane -->
+    <title>CEMPUR</title>
+
+</head>
+
+
+<body>
+<!-- Alt det synlige indhold på siden placeres i body -->
+
+
+<!-- Hovedsektionen for før/efter-elementet -->
+<section class="baggrund">
+
+    <!-- Samler tekst, slider og kort i et grid-layout -->
+    <div class="tekst-slide">
+
+
+        <!-- VENSTRE TEKST -->
+        <div class="venstre-sidetekst">
+
+            <!-- Lille overskrift over hovedoverskriften -->
+            <h5 class="før-efter-tekst">
+                Før/Efter
+            </h5>
+
+            <!-- Hovedoverskrift -->
+            <h1 class="se-forskel">
+                Se forskellen
+            </h1>
+
+            <!-- Grøn dekorativ linje -->
+            <div class="venstreside-brødtekst"></div>
+
+            <!-- Beskrivelse af casen -->
+            <p class="brødtekst">
+                Se hvordan vi på en skole har forvandlet et nedslidt og
+                ildelugtende gulv til et flot, indbydende og lugtfrit toilet.
+            </p>
+
+            <!-- Link/knap til flere cases -->
+            <a
+                    href="https://cempur.dk/lugtfrie-toiletter/"
+                    class="se-flere-cases-knap"
+            >
+                Se flere cases
+                <span class="pil">→</span>
+            </a>
+
+        </div>
+
+
+        <!-- FØR / EFTER SLIDER -->
+
+        <!-- Containeren til før/efter-slideren -->
+        <div class="før-efter-wrapper" id="førEfterSlider">
+
+            <!-- Viser før-billedet -->
+            <div class="før-efter-billede før-billede"></div>
+
+            <!-- Viser efter-billedet -->
+            <div class="før-efter-billede efter-billede"></div>
+
+            <!-- Label der viser "FØR" -->
+            <span class="før-efter-label før-label">
+                FØR
+            </span>
+
+            <!-- Label der viser "EFTER" -->
+            <span class="før-efter-label efter-label">
+                EFTER
+            </span>
+
+            <!-- Selve den lodrette sliderlinje -->
+            <div class="før-efter-slider">
+
+                <!-- Den runde knap som brugeren kan trække -->
+                <div class="før-efter-haandtag">
+                    ‹›
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HØJRE KORT -->
+
+        <!-- Kort med information om projektet -->
+        <div class="før-efter-kort">
+
+            <!-- Overskrift på kortet -->
+            <h3 class="før-efter-kort-titel">
+                Toilet på skole
+            </h3>
+
+            <!-- Liste med fordelene ved løsningen -->
+            <ul class="før-efter-liste">
+
+                <!-- Første fordel -->
+                <li>
+                    <span class="check">✓</span>
+                    <span>Fugefri overflade</span>
+                </li>
+
+                <!-- Anden fordel -->
+                <li>
+                    <span class="check">✓</span>
+                    <span>Væsker kan ikke sive ned i gulvet</span>
+                </li>
+
+                <!-- Tredje fordel -->
+                <li>
+                    <span class="check">✓</span>
+                    <span>Ingen behov for opbrydning af gulv</span>
+                </li>
+
+                <!-- Fjerde fordel -->
+                <li>
+                    <span class="check">✓</span>
+                    <span>Klar på kun 3 dage</span>
+                </li>
+
+            </ul>
+
+            <!-- Link til siden med flere billeder -->
+            <a
+                    href="https://cempur.dk/lugtfrie-toiletter-foer-efter/"
+                    class="før-efter-flere"
+            >
+                Se flere billeder
+
+                <!-- Pil ved siden af teksten -->
+                <span class="pil">→</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+        // Finder før/efter-slideren
+        const slider = document.getElementById("førEfterSlider");
+
+        if (slider) {
+
+            // Registrerer når brugeren bevæger musen over slideren
+            slider.addEventListener("pointermove", function(event) {
+
+                // Tjekker om brugeren holder musen nede
+                if (event.buttons === 1) {
+
+                    const rect = slider.getBoundingClientRect();
+
+                    // Beregner sliderens position i procent
+                    const position =
+                        ((event.clientX - rect.left) / rect.width) * 100;
+
+                    // Begrænser positionen mellem 0 og 100 procent
+                    slider.style.setProperty(
+                        "--pos",
+                        Math.max(0, Math.min(100, position)) + "%"
+                    );
+
+                }
+
+            });
+
+        }
+
+    });
+
+</script>
+
+
+</body>
+
+</html>

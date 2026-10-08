@@ -1,0 +1,301 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+    --green: #009b45;
+    --green-dark: #008c3e;
+    --black: #000000;
+    --bg: #e9ebe9;
+    --white: #ffffff;
+    --font-main: 'Sora', sans-serif;
+}
+
+
+/* Baggrunden */
+
+.baggrund {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: var(--bg);
+    padding: 80px 48px;
+    font-family: var(--font-main);
+    color: var(--black);
+}
+
+
+.tekst-slide {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 245px minmax(300px, 1fr) 240px;
+    align-items: center;
+}
+
+
+.venstre-sidetekst {
+    padding-right: 34px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Før/Efter lille overskrift */
+
+.før-efter-tekst {
+    font-family: var(--font-main);
+    color: var(--green);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* Hovedoverskrift */
+
+.se-forskel {
+    font-family: var(--font-main);
+    color: var(--black);
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.8px;
+    margin-top: 25px;
+}
+
+
+/* Grøn dekorativ linje */
+
+.venstreside-broedtekst {
+    width: 60px;
+    height: 2px;
+    background: var(--green);
+    margin: 30px 0;
+}
+
+
+/* Brødtekst */
+
+.brødtekst {
+    font-family: var(--font-main);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 35px;
+}
+
+
+/* Se flere cases-knap */
+
+.se-flere-cases-knap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 54px;
+    padding: 0 20px 0 25px;
+    background: var(--green);
+    color: var(--white);
+    text-decoration: none !important;
+    border-radius: 5px;
+    transition: 0.2s ease;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+/* Pil */
+
+.pil {
+    font-size: 25px;
+}
+
+
+/* FØR / EFTER SLIDER */
+
+.før-efter-wrapper {
+    position: relative;
+    width: 100%;
+    height: 428px;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #ddd;
+    user-select: none;
+    touch-action: none;
+    --pos: 50%;
+}
+
+
+/* Billeder */
+
+.før-efter-billede {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/* FØR-billede */
+
+.før-billede {
+    background-image: url("BEFORE-IMAGE");
+}
+
+
+/* EFTER-billede */
+
+.efter-billede {
+    background-image: url("AFTER-IMAGE");
+    width: var(--pos);
+    right: auto;
+    border-right: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+
+/* FØR / EFTER labels */
+
+.før-efter-label {
+    position: absolute;
+    top: 12px;
+    z-index: 10;
+    padding: 7px 10px;
+    border-radius: 4px;
+    font-family: var(--font-main);
+    font-size: 10px;
+    font-weight: 600;
+    color: white;
+    pointer-events: none;
+}
+
+
+/* FØR label */
+
+.før-label {
+    left: 12px;
+    background: rgba(50, 50, 50, 0.8);
+}
+
+
+/* EFTER label */
+
+.efter-label {
+    right: 12px;
+    background: var(--green);
+}
+
+
+/* Lodret sliderlinje */
+
+.før-efter-slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: var(--pos);
+    width: 3px;
+    background: white;
+    z-index: 20;
+    transform: translateX(-50%);
+    cursor: ew-resize;
+}
+
+
+/* Rundt håndtag */
+
+.før-efter-haandtag {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 42px;
+    height: 42px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: rgba(45, 45, 45, 0.85);
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+
+/* HØJRE KORT */
+
+.før-efter-kort {
+    position: relative;
+    z-index: 30;
+    height: 428px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    padding: 32px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+/* Overskrift på højre kort */
+
+.før-efter-kort-titel {
+    font-family: var(--font-main);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+
+/* Liste */
+
+.før-efter-liste {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+/* Punkter i listen */
+
+.før-efter-liste li {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    gap: 8px;
+    font-family: var(--font-main);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+
+/* Checkmark */
+
+.check {
+    color: var(--green);
+    font-size: 18px;
+}
+
+
+/* Se flere billeder */
+
+.før-efter-flere {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--green);
+    text-decoration: none !important;
+    font-size: 13px;
+    font-weight: 600;
+}
